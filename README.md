@@ -1,6 +1,6 @@
 # Mariner Paperless → Receipts Space Migration
 
-A Python script to migrate receipts from [Mariner Paperless](https://www.marinersoftware.com) (also known as ReceiptWallet) to [Receipts Space](https://receipts-space.com) by Dirk Holtwick.
+A Python script to migrate receipts from Mariner Paperless (also known as ReceiptWallet) to [Receipts Space](https://receipts-space.com) by Dirk Holtwick.
 
 ## Background
 
@@ -92,13 +92,13 @@ Check a few receipts in Receipts Space to confirm vendors, amounts, dates and ca
 - Handles EU and US number formats (e.g. 1.234,56 and 1,234.56)
 - Normalises filenames (double extensions, multiple spaces, etc.)
 - Auto-normalises vendor name spelling variations (majority-wins)
-- Handles deleted records gracefully
+- Skips receipts that were deleted in Paperless
 - Supports multiple currency libraries via –currency
 
 ## Limitations
 
 - PDFs must be imported into Receipts Space first — the script only writes metadata
-- Account and Posted are custom fields in Paperless that have no direct equivalent in Receipts Space. Account is migrated as a tag; Posted is migrated as the payment date
+- Account and Posted are optional custom fields in Paperless. If present, Account is migrated as a tag and Posted as the payment date. If absent, the script skips them without errors
 - Receipts Space does not currently support custom fields
 - Each Paperless library (if you have multiple currencies) needs to be migrated separately with its own –currency flag
 
