@@ -69,7 +69,7 @@ python3 paperless_to_receipts.py \
     --currency EUR
 ```
 
-Receipts Space can stay open while the script runs — changes appear almost instantly.
+Receipts Space can stay open while the script runs. For small libraries changes appear almost instantly. For large migrations, closing RS first is recommended to avoid any conflicts.
 
 ### Step 6: Verify
 
@@ -104,7 +104,7 @@ Check a few receipts in Receipts Space to confirm vendors, amounts, dates and ca
 
 ## Caveats
 
-- Receipts Space can stay open while the script runs — changes appear almost instantly
+- Receipts Space can stay open while the script runs. For small libraries changes appear almost instantly. For large migrations, closing RS first is recommended to avoid any conflicts
 - If entries do not appear updated, quit RS and delete the cache:
   ~/Library/Application Support/de.holtwick.mac.homebrew.Receipts2/data/<workspaceId>.*
   Then reopen Receipts Space — it will rebuild from the transaction files
